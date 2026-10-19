@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "retrywise"
+version = "0.1.0"
+description = "Retry with exponential backoff and jitter for sync and async functions"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+keywords = ["retry", "backoff", "resilience", "asyncio"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/xacking/retrywise"
+Issues = "https://github.com/xacking/retrywise/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/retrywise"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
